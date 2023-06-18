@@ -1,0 +1,16 @@
+<div>
+    <table *ngIf="dataLoaded" class="table table-striped">
+        <thead>
+              <tr>           
+                <th *ngFor="let header of config">{{header | titlecase}}</th>
+              </tr>
+        </thead>
+        <tbody>
+              <tr *ngFor="let item of newRegimeData">      
+                <td *ngFor="let key of config">{{item[key]}}</td>               
+              </tr>
+        </tbody>
+    </table>    
+</div>
+
+<!-- {{newRegimeData}} -->

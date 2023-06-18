@@ -1,0 +1,22 @@
+<div class="card" fxLayout="row" fxLayoutAlign="end center">
+    <div class="card-header">
+        <p><b>Download Excel Templates</b></p>
+    </div>
+    <div class="card-body">
+        <div class="outer-div">
+            <div class="container section1">
+                <div class="img-container">
+                    <img src="assets/images/Excel-Logo.png" alt="No Image" width="80" height="50">          
+                </div>
+                <div class="text-container">
+                    <p><b>Tax Calculation</b></p>
+                    <p class="taxText">{{taxCalculationText}}</p>
+                </div>
+                <div class="link-container">
+                    <button class="btn btn-download" (click)="downloadTaxCalculatorExcel()"> Download</button> 
+                </div>
+            </div>
+            <hr class="custom-hr">
+        </div>
+    </div>    
+</div>

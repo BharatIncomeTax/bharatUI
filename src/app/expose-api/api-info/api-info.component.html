@@ -1,0 +1,29 @@
+<table *ngIf="RequestTable">
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let parameterItem of reqParameters;  let i = index">
+      <td class="paramItem"><b>{{ parameterItem }}</b></td>
+      <td class="descriptionItem" [innerHTML]="reqDescriptions[i].replaceAll('\n', '<br>')"></td>
+    </tr>
+  </tbody>
+</table>
+
+<table *ngIf="ResponseTable">
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let parameterItem of resParameters;  let i = index">
+      <td class="paramItem"><b>{{ parameterItem }}</b></td>
+      <td class="descriptionItem" [innerHTML]="resDescriptions[i].replaceAll('\n', '<br>')"></td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,33 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="card" fxLayout="row" fxLayoutAlign="end center">
+    <div class="card-header">
+        <div  fxLayout="row" fxLayoutAlign="end center">
+
+        
+        <!-- fxLayout="row" fxLayoutAlign="end center" -->
+        <button class="btn btn-primary btn-download" (click)="downloadTaxCalculatorExcel()"> Download</button>        
+        
+        <div class="file-upload">
+            <div style="display: flex;">
+                <input type="file" id="file" style="margin-top: -5px;" (change)="onFileSelected($event)" class="custom-file-input">                
+                <div class="input-group-append">
+                    <button type="button" class="btn btn-outline-secondary btn-trash" (click)="clearFileSelection()"><i class="fa fa-times-circle"></i></button>
+                </div>
+                <button type="button" class="btn btn-primary btn-upload" style="margin-left: 20px;" (click)="uploadFile()">Upload</button>
+            </div>
+            <div *ngIf="progress">
+              <progress class="progress-bar primary" [value]="progress" max="100"></progress>
+              <span>{{ progress }}%</span>         
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="card-body">
+      <!-- <app-editable-table #editabletable [tableConfig]="tableConfig" [tableData] = "tableData" (event)="tableEvent($event)" (rowData)="rowData($event)"></app-editable-table>
+      <button style="margin-top: 10px;" (click)="calculate()">Calculate</button> -->
+      <app-editable-table #editabletable [tableConfig]="tableConfig" (event)="tableEvent($event)" (rowData)="rowData($event)"></app-editable-table>
+      <button style="margin-top: 10px;" (click)="calculate()">Calculate</button>
+    </div>    
+</div>

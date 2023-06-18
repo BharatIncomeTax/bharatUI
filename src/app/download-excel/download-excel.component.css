@@ -1,0 +1,48 @@
+.outer-div{
+    margin-top: -10px;
+}
+
+.section1{
+    display: flex;
+    position: relative;
+    min-width: 100px;
+    background-color: rgb(221, 234, 237); 
+}
+
+.img-container{
+    max-width: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.text-container{
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.link-container{
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.btn-download {
+    height: 40px;
+    background-color: #11a014e6;
+    color: white;
+}
+
+.custom-hr {
+    margin: 0 auto;
+}
+
+.taxText{
+    font-size: 14px;
+    margin-top: -12px;
+}
+
+.card{
+    margin-top: 3% ;
+}

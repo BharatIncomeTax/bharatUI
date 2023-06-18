@@ -1,0 +1,149 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>API's</h3>
+        </div>
+
+        <ul class="list-unstyled components">
+            <p>API Documentation</p>
+            <li class="active">
+                <!-- <a >Home</a>
+                <ul id="homeSubmenu"> -->
+                <a href="#cumulativeDepositesSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Cumulative Deposites</a>
+                    <ul class="collapse list-unstyled" id="cumulativeDepositesSubmenu">
+                    <li>
+                        <a (click)="showComponent('interestTableInstrument')" value="1">Interest Table for an instrument</a>
+                    </li>
+                    <li>
+                        <a (click)="showComponent('interestOnSpecifiedPeriods')">Interest on Specified Periods</a>
+                    </li>                    
+                </ul>
+            </li>
+            <li class="active">
+                <!-- <a >Home</a>
+                <ul id="homeSubmenu"> -->
+                <a href="#forexSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Forex</a>
+                    <ul class="collapse list-unstyled" id="forexSubmenu">
+                    <li>
+                        <a (click)="showComponent('currencies')">Currencies</a>
+                    </li>
+                    <li>
+                        <a (click)="showComponent('currenciesAgainstUSD')">Currency Rate against USD</a>
+                    </li>                    
+                </ul>
+            </li>
+            <li class="active">
+                <a href="#metalsSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Metals</a>
+                    <ul class="collapse list-unstyled" id="metalsSubmenu">
+                    <li>
+                        <a (click)="showComponent('goldSilverRate')">Gold/Silver Rate</a>
+                    </li>                               
+                </ul>
+            </li>
+            <li class="active">
+                <a href="#incomeTaxSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Income_Tax</a>
+                    <ul class="collapse list-unstyled" id="incomeTaxSubmenu">
+                    <li>
+                        <a (click)="showComponent('slabWiseBreakup')">Slab-Wise Income Tax breakup</a>
+                    </li>                               
+                </ul>
+            </li>
+            <li class="active">
+                <a href="#bondsSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Bonds</a>
+                    <ul class="collapse list-unstyled" id="bondsSubmenu">
+                    <li>
+                        <a (click)="showComponent('sovereignGoldBonds')">Sovereign Gold Bonds Market Price</a>
+                    </li>                               
+                </ul>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>                       
+        </ul>
+
+        <ul class="list-unstyled CTAs">
+            <li>
+                <!-- <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a> -->
+            </li>
+            <li>
+                <a class="download">Download source</a>
+            </li>
+            <li>
+                <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content">
+        <button type="button" id="sidebarCollapse" class="btn btn-info" (click)="toggleSideNav()">
+            <i class="fas fa-align-left"></i>
+            <!-- <span>Toggle Sidebar</span> -->
+        </button>
+        <div>                    
+            <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+    
+                    <button type="button" id="sidebarCollapse" class="btn btn-info" (click)="hehe()">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+    
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+                
+            <div class="line"></div>
+    
+            <h2>Lorem Ipsum Dolor</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    
+            <div class="line"></div>
+    
+            <h2>Lorem Ipsum Dolor</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    
+            <div class="line"></div>
+    
+            <h3>Lorem Ipsum Dolor</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->        
+            
+            <div *ngIf="viewInfo">
+                <p><b>Example Request</b></p>
+                <pre>{{ sampleJsonRequest | json }}</pre>
+                <p><b>Request Parameter</b></p>
+            </div>    
+            <app-api-info *ngIf="viewInfo" class="text-center" [optionId]="optionId" (sampleJson)="sampleJson($event)" [RequestTable]="true"></app-api-info>
+            <div *ngIf="viewInfo">
+                <p><b>Example Response</b></p>
+                <pre>{{ sampleJsonResponse | json }}</pre>
+                <p><b>Response Parameter</b></p>
+            </div>
+            <app-api-info *ngIf="viewInfo" class="text-center" [optionId]="optionId" (sampleJson)="sampleJson($event)" [ResponseTable]="true"></app-api-info>
+        </div>        
+    </div>
+</div>  

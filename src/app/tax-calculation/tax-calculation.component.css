@@ -1,0 +1,69 @@
+.btn-download {
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    /* padding: 8px 15px; */
+    cursor: pointer;
+    /* font-size: 15px; */
+    font-family: 'Times New Roman', Times, serif;
+    /* margin-left: 50%; */
+}
+
+.btn-download {
+    height: 40px;
+    background-color: #0d6efd;
+    margin-left: 12px;
+}
+
+.file-upload{
+    float: right;
+}
+
+.btn-upload {
+    height: 40px;
+}
+
+.file-upload input[type="file"] {
+    /* background-color: #0d6efd; */
+    color: black;
+    /* border-color: #0d6efd; */
+    padding: .375rem .75rem;
+    border-radius: .25rem;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+    color: #fff;
+    background-color: #0d6efd;
+
+    /* border-color: gray; */
+    padding: .375rem .75rem;
+    border-radius: .25rem;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+.progress-bar{
+    vertical-align: baseline;
+    margin-left: 14px;
+    width: 300px;
+    border-radius: 0.5rem;
+    height: 5px;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+    background-color: RoyalBlue;
+}
+.card{
+    margin-top: 3% ;
+}
+.progress-bar {
+    background-color: #ddd;
+}
+
+.fa-times-circle {
+    opacity: 0.5;
+}
+.card-header{
+    display: flex;
+    justify-content: flex-end;
+}

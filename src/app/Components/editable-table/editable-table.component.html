@@ -1,0 +1,31 @@
+<div>
+    <button [disabled]="disableClearAllData" (click)="clearData()">Clear All data</button>
+    <button (click)="addRow()">Add Row</button>
+    <button [disabled]="disableDelete" (click)="deleteSelectedRows()">Delete Selected Rows</button>
+    <button [disabled]="disableEdit" (click)="toggleEditable()">Edit</button>
+  </div>
+<table>
+    <thead>
+        <tr>           
+          <th *ngFor="let header of config">{{header | titlecase}}</th>
+        </tr>
+    </thead>
+  <tbody>
+    <tr *ngFor="let row of rows; let i = index" class="editable-table-cell">      
+        <ng-container *ngFor="let column of config" class="form-field">                                         
+            <td>
+                <input type="text" [(ngModel)]="row[column]" [disabled]="!row.editable" (change)="handleInput(column, row, i)" (blur)="markFieldAstouched(column, row, i)"
+                 required [class.is-invalid]="isFieldInvalidAndTouched(column, row, i)"> <!--//change event will work on focusOut -->
+                <!-- <input type="text" [(ngModel)]="row[column]" [disabled]="!row.editable" (input)="handleInput(column, row, i)"> // input event will trigger on every key stroke  -->
+                <div *ngIf="isFieldInvalidAndTouched(column, row, i)" class="error-message">{{column}} is required</div>
+                <div *ngIf="!isFieldInvalidAndTouched(column, row, i)"><p> </p></div>
+            </td>
+        </ng-container>
+        <td>
+            <input type="checkbox" [(ngModel)]="row.selected">
+        </td>
+    </tr>
+  </tbody>
+</table>
+
+

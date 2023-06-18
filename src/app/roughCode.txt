@@ -1,0 +1,94 @@
+<!-- <table>
+    <thead>
+      <tr>
+        <th>Column 1</th>
+        <th>Column 2</th>
+        <th>Column 3</th>
+        <th>Column 4</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of rows">
+        <td>{{row.column1}}</td>
+        <td>{{row.column2}}</td>
+        <td>{{row.column3}}</td>
+        <td>{{row.column4}}</td>
+        <td><button (click)="addRow()">Add</button></td>
+      </tr>
+    </tbody>
+</table>   -->
+
+<table>
+    <thead>
+      <tr>
+        <th>Column 1</th>
+        <th>Column 2</th>
+        <th>Column 3</th>
+        <th>Column 4</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of rows; let i = index">
+        <td>{{row.column1}}</td>
+        <td>{{row.column2}}</td>
+        <td>{{row.column3}}</td>
+        <td>{{row.column4}}</td>
+        <td>
+            <button *ngIf="showAddButton && i === rows.length - 1" (click)="addRow()">
+                <i class="fas fa-plus"></i>
+              </button>
+              <button *ngIf="rows.length == 1 ? true : i !== rows.length - 1" (click)="deleteRow(i)" [disabled]="rows.length == 1 ? true : false">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+        </td>
+      </tr>
+    </tbody>
+</table>
+  
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-editable-table',
+  templateUrl: './editable-table.component.html',
+  styleUrls: ['./editable-table.component.css']
+})
+export class EditableTableComponent implements OnInit {
+
+  private flag: boolean = true
+  constructor() { }
+
+  ngOnInit(): void {
+    if(this.rows.length == 0) {
+      this.rows.push({showAddButton: true})
+    }
+  }
+
+  rows = [
+    // { column1: 'Row 1 Column 1', column2: 'Row 1 Column 2', column3: 'Row 1 Column 3', column4: 'Row 1 Column 4', showAddButton: true },
+    // { column1: 'Row 2 Column 1', column2: 'Row 2 Column 2', column3: 'Row 2 Column 3', column4: 'Row 2 Column 4', showAddButton: true },
+    // { column1: 'Row 3 Column 1', column2: 'Row 3 Column 2', column3: 'Row 3 Column 3', column4: 'Row 3 Column 4', showAddButton: true }
+  ];
+
+  addRow() {
+    if(this.rows.length == 1 && this.flag) {
+      this.rows = [];
+      // this.rows[this.rows.length - 1].showAddButton = false;
+      this.rows.push({ column1: 'New Row Column 1', column2: 'New Row Column 2', column3: 'New Row Column 3', column4: 'New Row Column 4', showAddButton: true });      
+      this.flag = false;
+    } else {
+      this.rows[this.rows.length - 1].showAddButton = false;
+      this.rows.push({ column1: 'New Row Column 1', column2: 'New Row Column 2', column3: 'New Row Column 3', column4: 'New Row Column 4', showAddButton: true });
+    }
+  }
+
+  showAddButton(index: number): boolean {
+    return this.rows[index].showAddButton;
+  }
+
+  deleteRow(index: number) {
+    this.rows.splice(index, 1);
+  }
+
+}
